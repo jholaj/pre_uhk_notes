@@ -16,7 +16,7 @@
 - Ideální na vyhledávání v poli
 - Nevhodné pokud chceme pole měnit
 
-![](../Images/Pasted%20image%2020220818120317.png)
+![](Images/Pasted%20image%2020220818120317.png)
 - Př.:
 ```python
 def binarysearch(arr,left,right,target):
@@ -144,4 +144,4 @@ dfs(graph,'1')
 ```
 
 ## **ROZDÍLY MEZI BFS A DFS** 
-- ![[Images/Pasted image 20220818120317.png]]
+- 
