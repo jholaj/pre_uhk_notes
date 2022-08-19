@@ -142,3 +142,4 @@ dfs(graph,'1')
 
 ## **ROZDÍLY MEZI BFS A DFS** 
 <hr>
+- ?
