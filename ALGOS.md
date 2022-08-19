@@ -144,4 +144,4 @@ dfs(graph,'1')
 ```
 
 ## **ROZDÍLY MEZI BFS A DFS** 
-- ?
+- ![[Images/Pasted image 20220818120317.png]]
