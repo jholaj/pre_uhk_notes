@@ -1,7 +1,6 @@
 # **VYHLEDÁVÁCÍ ALGORITMY**
-<hr>
+
 ## **BINARY SEARCH (VYHLEDÁVÁNÍ PŮLENÍM INTERVALU)**
-<hr>
 - Nutná seřazená sada prvků 
 - Dělí pole na dvě poloviny (proto binární)
 - Rozděl a panuj
@@ -19,7 +18,6 @@
 - ![[Pasted image 20220818120317.png]]
 - Př.:
 ```python
-
 def binarysearch(arr,left,right,target):
 	while left <= right:
 		mid = left + (right - left) // 2
@@ -40,8 +38,8 @@ target = 10
 
 result = binarysearch(arr, 0, len(arr)-1, target)
 ```
+
 ## **BREADTH-FIRST SEARCH  (PROHLEDÁVÁNÍ DO ŠÍŘKY)** 
-<hr>
 - Grafový algoritmus
 - Postupně prochází všechny vrcholy v dané komponentě souvislosti (maximální souvislý podgraf)
 - Nejprve projde všechny sousedy startovního vrcholu, poté soused sousedů => dokud neprojde celou komponentu souvislosti
@@ -96,7 +94,6 @@ bfs(visited,graph,'3')
 ```
 
 ## **DEPTH-FIRST SEARCH  (PROHLEDÁVÁNÍ DO HLOUBKY)**
-<hr>
 - Metoda backtrackingu
 - Vždy expanduje prvního následníka každého vrcholu, pokud je ještě nenavštívil
 - Pokud narazí na vrchol, z kterého nejde pokračovat (nemá návštěvník/byly navštíveny), vrací se zpět backtrackingem
@@ -142,5 +139,6 @@ dfs(graph,'0')
 dfs(graph,'1')
 #Výsledek = 1 0 2 4 3 3
 ```
+
 ## **ROZDÍLY MEZI BFS A DFS** 
 <hr>
