@@ -15,7 +15,8 @@
 - Složitost: **O(log n)** (n = počet prvků v poli)
 - Ideální na vyhledávání v poli
 - Nevhodné pokud chceme pole měnit
-- ![](../Images/Pasted%20image%2020220818120317.png)
+
+![](../Images/Pasted%20image%2020220818120317.png)
 - Př.:
 ```python
 def binarysearch(arr,left,right,target):
@@ -58,7 +59,8 @@ result = binarysearch(arr, 0, len(arr)-1, target)
 	 5) Výstup algoritmu = BF-strom (strom nejkratších cest z daného uzlu)
 - Složitost: **O(v + e)** (v = nodes; e = edges)
 - Využití: Hledání nejkratší cesty v grafu/zda je graf zcela propojen
-- ![](../Images/Pasted%20image%2020220818140500.png)
+
+![](../Images/Pasted%20image%2020220818140500.png)
 - Př.:
  ```python
 graph = {
@@ -111,7 +113,8 @@ bfs(visited,graph,'3')
 	8) Ne => Uzel se prohlásí za uzavřený "CLOSED"
 -  Složitost: **O(v + e)** (v = nodes; e = edges)
 - Využití: topologické uspořádání uzlů grafu, nalezení silných komponent grafu, acykličnost grafu
-- ![](../Images/Pasted%20image%2020220819082858.png|600)
+
+![](../Images/Pasted%20image%2020220819082858.png|600)
 - Př.:
 ```python
 graph = {
@@ -141,5 +144,4 @@ dfs(graph,'1')
 ```
 
 ## **ROZDÍLY MEZI BFS A DFS** 
-<hr>
 - ?
