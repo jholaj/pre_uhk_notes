@@ -1,5 +1,7 @@
-**BINARY SEARCH (VYHLEDÁVÁNÍ PŮLENÍM INTERVALU)**
-------------------------------------------------------------------------------------------------------
+# **VYHLEDÁVÁCÍ ALGORITMY**
+<hr>
+## **BINARY SEARCH (VYHLEDÁVÁNÍ PŮLENÍM INTERVALU)**
+<hr>
 - Nutná seřazená sada prvků 
 - Dělí pole na dvě poloviny (proto binární)
 - Rozděl a panuj
@@ -38,8 +40,8 @@ target = 10
 
 result = binarysearch(arr, 0, len(arr)-1, target)
 ```
-**BREADTH-FIRST SEARCH  (PROHLEDÁVÁNÍ DO ŠÍŘKY)** 
------------------------------------------------------------------------------------------------------
+## **BREADTH-FIRST SEARCH  (PROHLEDÁVÁNÍ DO ŠÍŘKY)** 
+<hr>
 - Grafový algoritmus
 - Postupně prochází všechny vrcholy v dané komponentě souvislosti (maximální souvislý podgraf)
 - Nejprve projde všechny sousedy startovního vrcholu, poté soused sousedů => dokud neprojde celou komponentu souvislosti
@@ -49,7 +51,7 @@ result = binarysearch(arr, 0, len(arr)-1, target)
 	- Uzly, které nebyly objeveny = FRESH
 	- Uzly, které se dostávají do fronty, které jsou vyšetřovány jejich násloedníky = OPEN
 	- Uzly, které byly z fronty vybrány a už se s nimi nebude pracovat = CLOSE
-Průběh:
+- Průběh:
 	 1) Začneme procházet graf z libovolného uzlu
 	 2) Uzel zpracujeme a při objevení nenalezených potomků uložíme do fronty
 	 3) Pro každý vrchol si budeme pamatovat značku, zda jsme ho navštivili
@@ -60,7 +62,7 @@ Průběh:
 - Využití: Hledání nejkratší cesty v grafu/zda je graf zcela propojen
 - ![[Pasted image 20220818140500.png]]
 - Př.:
-```python
+ ```python
 graph = {
 	'5' : ['3','7'],
 	'3' : ['2','4'],
@@ -71,7 +73,7 @@ graph = {
 }
 
 visited = [] 
-queue - []
+queue = []
 
 def bfs(visited, graph, node):
 	visited.append(node)
@@ -92,5 +94,53 @@ bfs(visited,graph,'5')
 bfs(visited,graph,'3')
 #Výsledek = 3 2 4 8
 ```
-**DEPTH-FIRST SEARCH  (PROHLEDÁVÁNÍ DO HLOUBKY)**
-----------------------------------------------------------------------------------------------------------
+
+## **DEPTH-FIRST SEARCH  (PROHLEDÁVÁNÍ DO HLOUBKY)**
+<hr>
+- Metoda backtrackingu
+- Vždy expanduje prvního následníka každého vrcholu, pokud je ještě nenavštívil
+- Pokud narazí na vrchol, z kterého nejde pokračovat (nemá návštěvník/byly navštíveny), vrací se zpět backtrackingem
+- Stejně jako BFS, používá stavy vrcholů "FRESH", "OPEN", a "CLOSED"
+- Během prohledávání lze přidělit časové značky (vhodné pro analýzu)
+- Alogritmus vždy najde řešení, ale není optimální (pokud grafem není strom)
+- Průběh:
+	1) Inicializace všech uzlů grafu a nastavení jejich předchůdců
+	2) Každý uzel nastaven jako "FRESH" (zatím nemá určeného přechůdce) [v poli předchůdců vše na null]
+	3) Projdi všechny uzly, které jsou dosud ve stavu FRESH metodou DFS
+	4) Metoda realizuje vlastni prohledávání do hloubky
+	5) Stav uzlu u, pro který byla metoda volána, nastaven na "OPEN"
+	6) Poté se pro každého následníka (v) uzlu zjistí, zda je ještě ve stavu "FRESH"
+	7) Ano =>Zapíše se pro něj do pole [p] hodnota předchůdce a zavolá se pro něj rekurzivně DFS
+	8) Ne => Uzel se prohlásí za uzavřený "CLOSED"
+-  Složitost: **O(v + e)** (v = nodes; e = edges)
+- Využití: topologické uspořádání uzlů grafu, nalezení silných komponent grafu, acykličnost grafu
+- ![[Pasted image 20220819082858.png|600]]
+- Př.:
+```python
+graph = {
+	'0' : set(['1','2']),
+	'1' : set(['0','3','4']),
+	'2' : set(['0']),
+	'3' : set(['1']),
+	'4' : set(['2','3']),
+}
+
+def dfs(graph, start, visited=None):
+	if visited is None:
+		visited = set()
+	visited.add(start)
+
+	print(start)
+
+	for next in graph[start] - visited:
+		dfs(graph, next, visited)
+	return visited
+				
+dfs(graph,'0')
+#Výsledek = 0 1 4 2 2 3 3 2
+
+dfs(graph,'1')
+#Výsledek = 1 0 2 4 3 3
+```
+## **ROZDÍLY MEZI BFS A DFS** 
+<hr>
