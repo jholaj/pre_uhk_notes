@@ -153,4 +153,5 @@ dfs(graph,'1')
 | Vhodnější        | Pro hledání vrcholů blíže k danému zdroji                                                                                         | V případě, že existují řešení vzdálená od zdroje                                                                                                  |
 | Paměť            | Vyžaduje více paměti                                                                                                              | Vyžaduje méně paměti                                                                                                                              |
 | Rychlost         | Pomalý s porovnáním DFS                                                                                                           | Rychlý oproti BFS                                                                                                                                 |
-![[Images/Pasted image 20220819101709.png]]
+
+![](Images/Pasted%20image%2020220819101709.png)
