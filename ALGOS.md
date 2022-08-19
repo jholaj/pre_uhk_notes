@@ -114,7 +114,7 @@ bfs(visited,graph,'3')
 -  Složitost: **O(v + e)** (v = nodes; e = edges)
 - Využití: topologické uspořádání uzlů grafu, nalezení silných komponent grafu, acykličnost grafu
 
-![](Images/Pasted%20image%2020220819082858.png|600)
+![](Images/Pasted%20image%2020220819082858.png)
 - Př.:
 ```python
 graph = {
@@ -144,3 +144,13 @@ dfs(graph,'1')
 ```
 
 ## **ROZDÍLY MEZI BFS A DFS** 
+| Parametr         | BFS                                                                                                                               | DFS                                                                                                                                               |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Datové typy      | Používá frontu (FIFO)                                                                                                             | Používá zásobník (LIFO)                                                                                                                           |
+| Definice         | Metoda procházení, při které nejprve procházíme všechny uzly na stejné úrovni a teprve poté přecházíme na další úroveň            | Procházení začíná v kořenovém uzlu a postupuje přes uzly tak daleko, jak je to jen možné, dokud nedosáhneme uzlu bez nenavštívených okolních uzlů |
+| Technika         | Lze použít k nalezení jediné zdrojové nejkratší cesty v neváženém grafu, protože v BFS dosáhneme vrcholu s minimálním počtem hran | S DFS můžeme projít více hran, abychom dosáhli vrcholu                                                                                            |
+| Koncepční rozdíl | BFS vytváří strom po jednotlivých úrovních                                                                                        | DFS sestavuje strom po podstromech                                                                                                                |
+| Vhodnější        | Pro hledání vrcholů blíže k danému zdroji                                                                                         | V případě, že existují řešení vzdálená od zdroje                                                                                                  |
+| Paměť            | Vyžaduje více paměti                                                                                                              | Vyžaduje méně paměti                                                                                                                              |
+| Rychlost         | Pomalý s porovnáním DFS                                                                                                           | Rychlý oproti BFS                                                                                                                                 |
+![[Images/Pasted image 20220819101709.png]]
